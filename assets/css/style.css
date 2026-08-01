@@ -63,13 +63,21 @@ body {
 .page {
   min-height: 100%;
   overflow-x: hidden;
+  @container (min-width: 480px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .contents {
   min-height: 100%;
+  background-color: var(--color--background);
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  @container (min-width: 480px) {
+    grid-column: 2/3;
+  }
 }
 
 *:has(.container) {
@@ -151,7 +159,7 @@ body {
 }
 
 .navi_menu {
-  width: fit-content;
+  width: 50%;
   max-width: none;
   height: 100%;
   max-height: none;
