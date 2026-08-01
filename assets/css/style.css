@@ -61,8 +61,8 @@ body {
 }
 
 .page {
-  min-height: 100%;
-  overflow-x: hidden;
+  height: 100%;
+  overflow: hidden;
   @container (min-width: 480px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
