@@ -60,6 +60,10 @@ body {
   }
 }
 
+*:has(> .page) {
+  container-type: inline-size;
+}
+
 .page {
   height: 100%;
   overflow: hidden;
@@ -75,12 +79,13 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  scroll-behavior: smooth;
   @container (min-width: 480px) {
-    grid-column: 2/3;
+    grid-column: 1/2;
   }
 }
 
-*:has(.container) {
+*:has(> .container) {
   container-type: inline-size;
 }
 
