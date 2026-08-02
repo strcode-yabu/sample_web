@@ -62,15 +62,21 @@ body {
 
 *:has(> .page) {
   container-type: inline-size;
+  container-name: page-wrap;
 }
 
 .page {
   height: 100%;
   overflow: hidden;
-  @container (min-width: 480px) {
+  @container page-wrap (width >= 720px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+*:has(> .contents) {
+  container-type: inline-size;
+  container-name: contents-wrap;
 }
 
 .contents {
@@ -80,19 +86,20 @@ body {
   flex-direction: column;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  @container (min-width: 480px) {
-    grid-column: 1/2;
+  @container contents-wrap (width >= 720px) {
+    grid-column: 2/3;
   }
 }
 
 *:has(> .container) {
   container-type: inline-size;
+  container-name: container-wrap;
 }
 
 .container {
   max-width: 1040px;
   margin-inline: auto;
-  @container (max-width: 1040px) {
+  @container container-wrap (width <= 1040px) {
     padding-inline: var(--padding--container-gutter);
   }
 }
