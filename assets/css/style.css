@@ -67,10 +67,10 @@ body {
 
 .page {
   height: 100%;
-  overflow: hidden;
   @container page-wrap (width >= 720px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    overflow: hidden;
   }
 }
 
