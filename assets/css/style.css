@@ -74,12 +74,12 @@ body {
   }
 }
 
-*:has(> .contents) {
+*:has(> .column__main) {
   container-type: inline-size;
   container-name: contents-wrap;
 }
 
-.contents {
+.column__main {
   min-height: 100%;
   background-color: var(--color--background);
   display: flex;
